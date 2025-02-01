@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Montez&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="/css/post.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="left-content">
+            <div>
+                <h1 class="logo">ScriBBler</h1>
+                <p class="subheading">Explore, Imagine, Create</p>
+            </div>
+        </div>
+        <div class="right-content">
+            <div class="buttons">
+                <button id="signUpButton">Sign Up</button>
+                <button id="signInButton">Sign In</button>
+            </div>
+        </div>
+    </header> 
+        <!-- Modal for Sign Up -->
+        <div id="signUpModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" id="closeSignUpModal">&times;</span>
+                <h2 class="modal-title">Get Started</h2>
+                <hr>
+                <div class="input-container">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Enter your name">
+                </div>
+                <div class="input-container">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" placeholder="Enter your username">
+                </div>
+                <div class="input-container">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" placeholder="Enter your password">
+                </div>
+                <div class="input-container">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" placeholder="Re-enter your password">
+                </div>
+                <div class="error-message" id="signupErrorMessage"></div>
+                <button id="signUpButtonModal" class="modal-button">Sign Up</button>
+            </div>
+        </div>
+        <!-- Modal for Sign In -->
+        <div id="signInModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal" id="closeSignInModal">&times;</span>
+                <h2 class="modal-title">Welcome Back!</h2>
+                <hr>
+                <div class="input-container">
+                    <label for="signInUsername">Username:</label>
+                    <input type="text" id="signInUsername" placeholder="Enter your username">
+                </div>
+                <div class="input-container">
+                    <label for="signInPassword">Password:</label>
+                    <input type="password" id="signInPassword" placeholder="Enter your password">
+                </div>
+                <div class="error-message" id="signInErrorMessage"></div>
+                <button id="signInButtonModal" class="modal-button">Sign In</button>
+                <div class="not-a-member">
+                    <span>Not a member?</span>
+                    <a href="#" id="showSignUpModal">Sign Up</a>
+                </div>
+            </div>
+        </div>
+
+
+    
+        <div class="post-title">
+            <!-- Editable Title -->
+            <h2 contenteditable="true">Your Post Title</h2>
+            <!-- Edit button (initially) -->
+            <button id="editButton" onclick="toggleEditMode()">Edit <i class="fa fa-edit"></i></button>
+            <!-- Save button (hidden initially) -->
+            <button id="saveButton" onclick="saveChanges()" style="display: none;">Save <i class="fa fa-save"></i></button>
+        </div>
+        <div class="post-author">
+            <!-- Author's Name -->
+            <p>Author Name</p>
+        </div>
+        <div class="post-text">
+            <!-- Editable Text -->
+            <p contenteditable="true">Your Post Text</p>
+        </div>
+        <div class="like-section">
+            <button id="likeButton">
+                <i class="fa fa-thumbs-up"></i> <span id="likeText">Like</span>
+            </button>
+            <p id="likeStatement">Be the first one to like this!</p>
+        </div>
+        <div class="comment-section">
+            <!-- Comment Input -->
+            <input type="text" id="commentInput" placeholder="Leave a comment...">
+            <div>
+            <!-- Comment Button -->
+            <button id="commentButton" onclick="addComment()">Comment</button>
+            <!-- All Comments -->
+            <p class="allComments1">All Comments</p>
+            <div class="all-comments" id="allComments">
+                <!-- Individual comments will be added here -->
+            </div>
+          </div>
+        </div>
+    
+    <script src="/js/post.js"></script>
+</body>
+</html>
